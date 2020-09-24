@@ -1,15 +1,21 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import  {createStore} from 'vuex'
 
-Vue.use(Vuex)
-
-export default new Vuex.Store({
+export default createStore({
   state: {
+    isShowBack: false
+  },
+  getters: {
+    getIsShowBack(state:any) {
+      return state.isShowBack
+    }
   },
   mutations: {
+    setIsShowBack(state,isShowBack:boolean) {
+      state.isShowBack = isShowBack
+    }
   },
   actions: {
   },
   modules: {
   }
-})
+});
